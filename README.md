@@ -8,6 +8,6 @@ deheap
 >	http://qxavier.me/2011/07/25/deap/
 
 queue_safe
->	前程安全队列
+>	线程安全队列
 
 
