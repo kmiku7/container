@@ -2,8 +2,11 @@
 
 TARGET = $(basename $(wildcard test_*.cpp))
 HRDS = $(wildcard *.h)
-INCLUDES = -I.
 OBJS = $(addsuffix .o, $(TARGET))
+INCLUDES = -I. \
+			-I../utility/output/include
+DEPS = -lkm_utility
+DEPSPATH = -L../utility/output/lib
 
 .PHONY: all clean
 all:$(TARGET)
@@ -14,7 +17,7 @@ clean:
 	rm -fr $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $@.o
+	$(CXX) -o $@ $(CXXFLAGS) $(INCLUDES) $(DEPSPATH) $@.o $(DEPS)
 	
 
 %.o:%.cpp $(HRDS)

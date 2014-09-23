@@ -1,9 +1,10 @@
-#include "deheap.h"
 #include <cstdlib>
 #include <vector>
 #include <algorithm>
 #include <iterator>
 #include <iostream>
+#include "deheap.h"
+#include "km_utility.h"
 
 using namespace std;
 using namespace km;
@@ -13,7 +14,7 @@ int main(int argc, char**argv){
 	deheap<int> deh;
 	vector<int> v;
 
-	sranddev();
+	utility::init_random_seed();
 
 	for( int i=0; i<1000; i++){
 		int next = rand();

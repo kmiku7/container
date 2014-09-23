@@ -1,7 +1,7 @@
 
 
 SPLIT_LINE = "--------------------"
-TARGET = $(notdir $(shell find . -d 1 -type d \! -name ".*"))
+TARGET = $(notdir $(shell find . -maxdepth 1 -type d \! -name ".*" \! -name "utility"))
 
 .PHONY: all clean
 all:
